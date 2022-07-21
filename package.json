@@ -1,0 +1,64 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "proseWrap": "preserve",
+    "printWidth": 80,
+    "arrowParens": "always",
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "name": "mylibts",
+  "author": "Art Mary",
+  "module": "dist/mylibts.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/mylibts.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/mylibts.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "dependencies": {
+    "luxon": "^2"
+  },
+  "devDependencies": {
+    "@formatjs/intl-displaynames": "^6",
+    "@formatjs/intl-getcanonicallocales": "^2",
+    "@formatjs/intl-locale": "^3",
+    "@size-limit/preset-small-lib": "^7.0",
+    "@types/luxon": "^2",
+    "@types/node": "^18",
+    "size-limit": "^7.0",
+    "tsdx": "^0.14",
+    "tslib": "^2.4",
+    "typescript": "^4.7"
+  }
+}
